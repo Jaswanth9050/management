@@ -1,0 +1,22 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.modal-content {
+  border-radius: 15px;
+}
+
+.modal-header {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+#usernameDisplay {
+  font-size: 1.1rem;
+}
+.sidebar {
+  position: sticky;
+  top: 70px;
+  height: calc(100vh - 70px);
+  overflow-y: auto;
+}
