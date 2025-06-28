@@ -10,36 +10,38 @@
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, #fce4ec, #e0f7fa);
       height: 100vh;
+      margin: 0;
       display: flex;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
       text-align: center;
     }
 
     .error-container {
       max-width: 600px;
-      padding: 40px;
+      padding: 30px;
       background: #fff;
       border-radius: 16px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 0.6s ease-in-out;
     }
 
     .error-container h1 {
-      font-size: 80px;
+      font-size: 70px;
       color: #ff4b5c;
+      margin-bottom: 10px;
     }
 
     .error-container p {
       font-size: 18px;
-      margin: 20px 0;
-      color: #444;
+      color: #555;
+      margin-bottom: 20px;
     }
 
     .btn-home {
       background-color: #007bff;
       color: white;
-      padding: 10px 20px;
+      padding: 10px 24px;
       border-radius: 10px;
       font-weight: 500;
       border: none;
@@ -48,25 +50,33 @@
     .btn-home:hover {
       background-color: #0056b3;
     }
+
+    .gif {
+      width: 100%;
+      max-width: 300px;
+      margin-bottom: 20px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
 <body>
   <div class="error-container">
+    <img src="https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif" alt="404 GIF" class="gif" />
     <h1>404</h1>
-    <p>Oops! The page you’re looking for doesn't exist.</p>
+    <p>Oops! The page you’re looking for doesn’t exist.</p>
     <button class="btn-home" onclick="redirectUser()">🏠 Go Home</button>
   </div>
 
   <script>
     function redirectUser() {
       const isLoggedIn = localStorage.getItem("isLoggedIn");
-
-      // You can adjust these file paths based on your project structure
       if (isLoggedIn === "true") {
-        // Redirect to dashboard if logged in
         window.location.href = "/management/dashboard.html";
       } else {
-        // Else, go to login page
         window.location.href = "/management/index.html";
       }
     }
