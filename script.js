@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const user = { email, password };
       localStorage.setItem('registeredUser', JSON.stringify(user));
       alert('Registered successfully!');
-      window.location.href = "/index.html";
+      window.location.href = "index.html";
     });
   }
 
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
           sessionStorage.setItem('sessionUser', email);
           localStorage.removeItem('rememberUser'); // Remove old remember data
         }
-        window.location.href = "/task/dashboard.html";
+        window.location.href = "dashboard.html";
       } else {
         alert('Invalid credentials');
       }
