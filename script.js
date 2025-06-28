@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const user = { email, password };
       localStorage.setItem('registeredUser', JSON.stringify(user));
       alert('Registered successfully!');
-      window.location.href = "/task/index.html";
+      window.location.href = "/index.html";
     });
   }
 
