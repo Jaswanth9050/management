@@ -47,6 +47,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (user && email === user.email && password === user.password) {
         alert('Login successful!');
+        localStorage.setItem("isLoggedIn", "true");
+
         if (remember) {
           localStorage.setItem('rememberUser', JSON.stringify({ email, password }));
         } else {

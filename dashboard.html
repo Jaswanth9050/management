@@ -258,6 +258,7 @@ usernameDisplay.textContent = "👤 " + localStorage.getItem("username");
 
 // Logout functionality
 logoutBtn.addEventListener("click", function () {
+  localStorage.removeItem("isLoggedIn");
   localStorage.removeItem("username");
   localStorage.removeItem("tasks"); // Optional: clear tasks on logout
   window.location.href = "index.html"; // ✅ Redirect to login page
