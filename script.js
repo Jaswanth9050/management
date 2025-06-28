@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
       const user = { email, password };
       localStorage.setItem('registeredUser', JSON.stringify(user));
       alert('Registered successfully!');
-      window.location.href = "index.html";
+      // window.location.href = "index.html";
+      window.location.href = "/management/index.html";
     });
   }
 
