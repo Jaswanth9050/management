@@ -7,10 +7,12 @@ document.addEventListener('DOMContentLoaded', function () {
   if (registerForm) {
     registerForm.addEventListener('submit', function (e) {
       e.preventDefault();
+      const name = document.getElementById('registername').value;
       const email = document.getElementById('registerEmail').value;
       const password = document.getElementById('registerPassword').value;
-      const user = { email, password };
+      const user = { name, email, password };
       localStorage.setItem('registeredUser', JSON.stringify(user));
+      localStorage.setItem('username', name); // ✅ Store username separately
       alert('Registered successfully!');
       window.location.href = "index.html";
       // window.location.href = "/management/index.html";
@@ -49,6 +51,9 @@ document.addEventListener('DOMContentLoaded', function () {
       if (user && email === user.email && password === user.password) {
         alert('Login successful!');
         localStorage.setItem("isLoggedIn", "true");
+        // localStorage.setItem("username",user.email)
+        localStorage.setItem("username", user.name); // ✅ Get name from registeredUser object
+
 
         if (remember) {
           localStorage.setItem('rememberUser', JSON.stringify({ email, password }));
